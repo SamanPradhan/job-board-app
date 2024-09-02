@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import Header from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,18 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header >
-          <div className="flex justify-between py-4 px-6 mx-auto">
-            <Link href={"/"} className="font-bold">Job Broad</Link>
-          <nav className="flex gap-4 *:bg-gray-200 *:py-2 *:px-4 *:rounded-md">
-            <Link href={"/login"}>Login</Link>
-            <Link href={"/new-listing"}>Post a Job</Link>
-          </nav>
-        </div>
-        </header>
+        <main className="py-4 px-6 max-w-2xl container mx-auto">
+          <Header />
+        </main>
         
         {children}
-        </body>
+      </body>
     </html>
   );
 }
